@@ -18,7 +18,7 @@ function login() {
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
     
-    if (email.endsWith('@school.edu')) {
+    if (email.endsWith('@gemselearning.com')) {
         auth.signInWithEmailAndPassword(email, password)
             .then(userCredential => {
                 document.getElementById('login').style.display = 'none';
@@ -26,9 +26,10 @@ function login() {
             })
             .catch(error => {
                 console.error('Login Error:', error);
+                alert('Login failed. Please check your credentials and try again.');
             });
     } else {
-        alert('Please use your school email.');
+        alert('Please use your school email (@gemselearning.com).');
     }
 }
 
